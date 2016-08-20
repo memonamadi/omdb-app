@@ -10,6 +10,7 @@ const PATHS = {
   app: path.resolve(__dirname, '../src/js'),
   styles: path.resolve(__dirname, '../src/styles'),
   images: path.resolve(__dirname, '../src/images'),
+  fonts: path.resolve(__dirname, '../src/fonts'),
   build: path.resolve(__dirname, '../build')
 };
 
@@ -18,6 +19,10 @@ const plugins = [
     {
       from: PATHS.images,
       to: 'images'
+    },
+    {
+      from: PATHS.fonts,
+      to: 'fonts'
     }
   ]),
   // Shared code
@@ -84,9 +89,8 @@ module.exports = {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
         loader: 'url-loader?limit=8192&name=images/[name].[ext]?[hash]'
       },
-      {
-        test: /\.(woff|woff2)$/,
-        loader: 'url-loader?limit=8192&name=fonts/[name].[ext]?[hash]'
+      { test: /\.(eot|woff|woff2|ttf)(\?\S*)?$/,
+        loader: 'url?limit=100000&name=[name].[ext]'
       }
     ]
   },
