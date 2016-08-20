@@ -42,8 +42,11 @@ export default class App extends React.Component {
       });
   }
 
-  closeModal() {
-    console.log('close');
+  closeModal(event) {
+    event.preventDefault();
+    this.setState({
+      modalOpen: false
+    });
   }
 
   sortBy(field) {
@@ -82,7 +85,7 @@ export default class App extends React.Component {
                  errorSearchMessage={this.state.errorSearchMessage}
                  handleOpenModal={this.openModal} />
         {this.state.modalOpen
-          ? <Modal handleCloseModal={this.closeModal} />
+          ? <Modal handleCloseModal={this.closeModal} film={this.state.singleFilm} />
           : ''
         }
       </div>

@@ -282,7 +282,56 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 600px;
+  max-width: 100%;
+  box-shadow: 0 12px 15px 0 rgba(0,0,0,0.25);
+}
+
+.modal__content {
+  position: relative;
+  padding: 2.5em;
+  line-height: 1.5;
   background-color: $white;
+  border: 2px solid $font-colour-one;
+}
+
+.modal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: $font-colour-one;
+  border: none;
+  border-radius: 50%;
+  margin: 1em;
+  padding: 0.5em;
+  cursor: pointer;
+  svg {
+    width: 24px;
+    fill: #fff;
+    pointer-events: none;
+    vertical-align: top;
+  }
+  &:hover {
+    background: $font-colour-two;
+  }
+}
+
+.modal__film--title {
+  font-family: 'GT Walsheim Bold';
+  color: $font-colour-two;
+}
+
+.modal__film--genre {
+  color: $font-colour-one;
+}
+
+.modal__film--actors,
+.modal__film--director,
+.modal__film--plot,
+.modal__film--awards {
+  span {
+    font-family: 'GT Walsheim Medium';
+    text-transform: uppercase;
+  }
 }
 
 @media screen and (min-width: 780px) {
