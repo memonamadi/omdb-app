@@ -37,8 +37,6 @@ export default class App extends React.Component {
           singleFilm: JSON.parse(response.text),
           modalOpen: true
         });
-        console.log(this.state.modalOpen);
-        console.log('singleFilm', this.state.singleFilm);
       });
   }
 

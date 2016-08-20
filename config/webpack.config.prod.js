@@ -19,10 +19,6 @@ const plugins = [
     {
       from: PATHS.images,
       to: 'images'
-    },
-    {
-      from: PATHS.fonts,
-      to: 'fonts'
     }
   ]),
   // Shared code
