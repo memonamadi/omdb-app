@@ -83,7 +83,9 @@ export default class App extends React.Component {
                  errorSearchMessage={this.state.errorSearchMessage}
                  handleOpenModal={this.openModal} />
         {this.state.modalOpen
-          ? <Modal handleCloseModal={this.closeModal} film={this.state.singleFilm} />
+          ? <Modal handleCloseModal={this.closeModal}
+                   film={this.state.singleFilm}
+                   modalState={this.state.modalOpen} />
           : ''
         }
       </div>
